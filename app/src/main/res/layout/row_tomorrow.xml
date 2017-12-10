@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="20dp"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/rowTomorrow_tv_help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:textColor="@color/colorPrimary_text"
+        android:textSize="22sp" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/rowTomorrow_tv_oneLessonTime"
+                style="@style/CommonText.TimeHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="08:00"
+                app:layout_constraintEnd_toStartOf="@id/rowTomorrow_v_divider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/rowTomorrow_tv_twoLessonTime"
+                style="@style/CommonText.TimeHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="08:50"
+                app:layout_constraintEnd_toEndOf="@+id/rowTomorrow_tv_oneLessonTime"
+                app:layout_constraintStart_toStartOf="@+id/rowTomorrow_tv_oneLessonTime"
+                app:layout_constraintTop_toBottomOf="@id/rowTomorrow_tv_oneLessonTime" />
+
+            <TextView
+                android:id="@+id/rowTomorrow_tv_threeLessonTime"
+                style="@style/CommonText.TimeHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="09:50"
+                app:layout_constraintEnd_toEndOf="@+id/rowTomorrow_tv_oneLessonTime"
+                app:layout_constraintStart_toStartOf="@+id/rowTomorrow_tv_oneLessonTime"
+                app:layout_constraintTop_toBottomOf="@id/rowTomorrow_tv_twoLessonTime" />
+
+            <TextView
+                android:id="@+id/rowTomorrow_tv_fourLessonTime"
+                style="@style/CommonText.TimeHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10:50"
+                app:layout_constraintEnd_toEndOf="@+id/rowTomorrow_tv_oneLessonTime"
+                app:layout_constraintStart_toStartOf="@+id/rowTomorrow_tv_oneLessonTime"
+                app:layout_constraintTop_toBottomOf="@id/rowTomorrow_tv_threeLessonTime" />
+
+            <TextView
+                android:id="@+id/rowTomorrow_tv_fiveLessonTime"
+                style="@style/CommonText.TimeHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="11:50"
+                app:layout_constraintEnd_toEndOf="@+id/rowTomorrow_tv_oneLessonTime"
+                app:layout_constraintStart_toStartOf="@+id/rowTomorrow_tv_oneLessonTime"
+                app:layout_constraintTop_toBottomOf="@id/rowTomorrow_tv_fourLessonTime" />
+
+            <TextView
+                android:id="@+id/rowTomorrow_tv_sixLessonTime"
+                style="@style/CommonText.TimeHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12:40"
+                app:layout_constraintEnd_toEndOf="@+id/rowTomorrow_tv_oneLessonTime"
+                app:layout_constraintStart_toStartOf="@+id/rowTomorrow_tv_oneLessonTime"
+                app:layout_constraintTop_toBottomOf="@id/rowTomorrow_tv_fiveLessonTime" />
+
+            <TextView
+                android:id="@+id/rowTomorrow_tv_sevenLessonTime"
+                style="@style/CommonText.TimeHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="13:30"
+                app:layout_constraintEnd_toEndOf="@+id/rowTomorrow_tv_oneLessonTime"
+                app:layout_constraintStart_toStartOf="@+id/rowTomorrow_tv_oneLessonTime"
+                app:layout_constraintTop_toBottomOf="@id/rowTomorrow_tv_sixLessonTime" />
+
+            <TextView
+                android:id="@+id/rowTomorrow_tv_eightLessonTime"
+                style="@style/CommonText.TimeHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="14:20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/rowTomorrow_tv_oneLessonTime"
+                app:layout_constraintStart_toStartOf="@+id/rowTomorrow_tv_oneLessonTime"
+                app:layout_constraintTop_toBottomOf="@id/rowTomorrow_tv_sevenLessonTime" />
+
+
+            <View
+                android:id="@+id/rowTomorrow_v_divider"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/colorSilver"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/rowTomorrow_tv_oneLesson"
+                style="@style/LessonHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Обществознание"
+                app:layout_constraintBaseline_toBaselineOf="@id/rowTomorrow_tv_oneLessonTime"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/rowTomorrow_v_divider" />
+
+            <TextView
+                android:id="@+id/rowTomorrow_tv_twoLesson"
+                style="@style/LessonHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Обществознание"
+                app:layout_constraintBaseline_toBaselineOf="@id/rowTomorrow_tv_twoLessonTime"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/rowTomorrow_v_divider" />
+
+            <TextView
+                android:id="@+id/rowTomorrow_tv_threeLesson"
+                style="@style/LessonHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Обществознание"
+                app:layout_constraintBaseline_toBaselineOf="@id/rowTomorrow_tv_threeLessonTime"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/rowTomorrow_v_divider" />
+
+            <TextView
+                android:id="@+id/rowTomorrow_tv_fourLesson"
+                style="@style/LessonHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Обществознание"
+                app:layout_constraintBaseline_toBaselineOf="@id/rowTomorrow_tv_fourLessonTime"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/rowTomorrow_v_divider" />
+
+            <TextView
+                android:id="@+id/rowTomorrow_tv_fiveLesson"
+                style="@style/LessonHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Обществознание"
+                app:layout_constraintBaseline_toBaselineOf="@id/rowTomorrow_tv_fiveLessonTime"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/rowTomorrow_v_divider" />
+
+            <TextView
+                android:id="@+id/rowTomorrow_tv_sixLesson"
+                style="@style/LessonHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Обществознание"
+                app:layout_constraintBaseline_toBaselineOf="@id/rowTomorrow_tv_sixLessonTime"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/rowTomorrow_v_divider" />
+
+            <TextView
+                android:id="@+id/rowTomorrow_tv_sevenLesson"
+                style="@style/LessonHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Обществознание"
+                app:layout_constraintBaseline_toBaselineOf="@id/rowTomorrow_tv_sevenLessonTime"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/rowTomorrow_v_divider" />
+
+            <TextView
+                android:id="@+id/rowTomorrow_tv_eightLesson"
+                style="@style/LessonHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Обществознание"
+                app:layout_constraintBaseline_toBaselineOf="@id/rowTomorrow_tv_eightLessonTime"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/rowTomorrow_v_divider" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

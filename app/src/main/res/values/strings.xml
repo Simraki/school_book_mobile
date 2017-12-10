@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Школьный журнал</string>
+    <string name="app_name_eng">School book</string>
+
+    <string name="title_activity_map">Map</string>
+
+    <string name="nav_bar_find">Найти</string>
+
+    <string name="subtitle_find">Найти водителя</string>
+
+    <string name="name">Имя</string>
+    <string name="surname">Фамилия</string>
+    <string name="email">Email</string>
+    <string name="password">Пароль</string>
+    <string name="phone_number">Номер телефона</string>
+
+    <string name="toRegister">Ещё нет аккаунта? <b>Регестрируйся!</b> </string>
+
+    <string name="register_radioStudent">Я - ученик</string>
+    <string name="register_radioTeacher">Я - учитель</string>
+    <string name="register_radioParent">Я - родитель</string>
+</resources>

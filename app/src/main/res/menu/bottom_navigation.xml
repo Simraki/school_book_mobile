@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottomNavigation_btn_news"
+        android:icon="@android:drawable/ic_dialog_map"
+        android:title="Новости" />
+
+    <item
+        android:id="@+id/bottomNavigation_btn_tomorrow"
+        android:icon="@android:drawable/ic_dialog_dialer"
+        android:title="Завтра" />
+
+    <item
+        android:id="@+id/bottomNavigation_btn_messages"
+        android:icon="@android:drawable/ic_dialog_email"
+        android:title="Сообщения" />
+
+    <item
+        android:id="@+id/bottomNavigation_btn_marks"
+        android:icon="@android:drawable/ic_dialog_email"
+        android:title="Оценки" />
+
+    <item
+        android:id="@+id/bottomNavigation_btn_menu"
+        android:icon="@android:drawable/ic_dialog_email"
+        android:title="Меню" />
+
+</menu>
