@@ -10,7 +10,7 @@
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
-        android:background="@drawable/button_back"
+        android:background="@drawable/button"
         android:text="Итоговые"
         android:textColor="@android:color/white"
         android:textSize="12sp"

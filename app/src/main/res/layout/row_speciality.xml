@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/rowSpeciality_tv_subject"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary_text"
+        android:layout_centerVertical="true"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_toStartOf="@id/rowSpeciality_cb_included"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="4dp"
+        android:layout_height="wrap_content"
+        android:text="Литературное чтение" />
+
+    <CheckBox
+        android:id="@+id/rowSpeciality_cb_included"
+        android:layout_width="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="4dp"
+        android:layout_alignParentEnd="true"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

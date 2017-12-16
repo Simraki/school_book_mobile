@@ -1,541 +1,420 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/register_layout_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:paddingEnd="40dp"
+    android:paddingStart="40dp">
 
 
-    <FrameLayout
+    <!-- Регистрация - Шаг 1 -->
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/register_layout_stepOne"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingEnd="40dp"
-        android:paddingStart="40dp">
+        android:layout_height="match_parent">
 
 
-        <!-- Регистрация - Шаг 1 -->
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/register_layout_stepOne"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone">
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/register_til_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@+id/register_til_pass"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed">
 
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/register_til_email"
-                android:layout_width="0dp"
+            <EditText
+                android:id="@+id/register_et_email"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:errorEnabled="true"
-                app:layout_constraintBottom_toTopOf="@+id/register_til_pass"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="packed">
+                android:hint="@string/email"
+                android:inputType="textEmailAddress" />
 
-                <EditText
-                    android:id="@+id/register_et_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/email"
-                    android:inputType="textEmailAddress" />
+        </android.support.design.widget.TextInputLayout>
 
-            </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/register_til_pass"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/register_til_email"
+            app:passwordToggleEnabled="true">
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/register_til_pass"
-                android:layout_width="0dp"
+            <EditText
+                android:id="@+id/register_et_pass"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:errorEnabled="true"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/register_til_email"
-                app:passwordToggleEnabled="true">
+                android:hint="@string/password"
+                android:inputType="textPassword" />
 
-                <EditText
-                    android:id="@+id/register_et_pass"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/password"
-                    android:inputType="textPassword" />
+        </android.support.design.widget.TextInputLayout>
 
-            </android.support.design.widget.TextInputLayout>
+        <TextView
+            android:id="@+id/register_tv_birthDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Дата рождения"
+            android:textColor="@color/colorPrimary_text"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/register_til_pass"
+            app:layout_constraintVertical_bias="0.1" />
 
-            <Button
-                android:id="@+id/register_btn_toStepTwo"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/round_button_back"
-                android:gravity="center"
-                android:text="->"
-                android:textColor="@android:color/white"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.9"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/register_til_pass"
-                app:layout_constraintVertical_bias="0.2" />
+        <Spinner
+            android:id="@+id/register_spinner_birthDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="8dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/register_spinner_birthMonth"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/register_tv_birthDate"
+            app:layout_constraintVertical_bias="0.1" />
 
-        </android.support.constraint.ConstraintLayout>
+        <Spinner
+            android:id="@+id/register_spinner_birthMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintBottom_toBottomOf="@+id/register_spinner_birthDay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/register_spinner_birthDay"
+            app:layout_constraintTop_toTopOf="@+id/register_spinner_birthDay" />
 
-        <!-- Регистрация - Шаг 2 -->
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/register_layout_stepTwo"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone">
+        <ImageButton
+            android:id="@+id/register_btn_toStepTwo"
+            style="@style/RoundBtn"
+            android:background="@drawable/round_button_back"
+            android:contentDescription="@string/btn_description_forward"
+            android:src="@drawable/ic_arrow_forward"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/register_spinner_birthDay"
+            app:layout_constraintVertical_bias="0.4" />
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/register_til_surname"
-                android:layout_width="0dp"
+    </android.support.constraint.ConstraintLayout>
+
+    <!-- Регистрация - Шаг 2 -->
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/register_layout_stepTwo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/register_til_surname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@+id/register_til_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed">
+
+            <EditText
+                android:id="@+id/register_et_surname"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:errorEnabled="true"
-                app:layout_constraintBottom_toTopOf="@+id/register_til_name"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="packed">
+                android:hint="@string/surname"
+                android:inputType="textPersonName" />
 
-                <EditText
-                    android:id="@+id/register_et_surname"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/surname"
-                    android:inputType="textPersonName" />
+        </android.support.design.widget.TextInputLayout>
 
-            </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/register_til_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@+id/register_rg_typeUser"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/register_til_surname">
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/register_til_name"
-                android:layout_width="0dp"
+            <EditText
+                android:id="@+id/register_et_name"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:errorEnabled="true"
-                app:layout_constraintBottom_toTopOf="@+id/register_rg_typeUser"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/register_til_surname">
+                android:hint="@string/name"
+                android:inputType="textPersonName" />
 
-                <EditText
-                    android:id="@+id/register_et_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/name"
-                    android:inputType="textPersonName" />
+        </android.support.design.widget.TextInputLayout>
 
-            </android.support.design.widget.TextInputLayout>
+        <RadioGroup
+            android:id="@+id/register_rg_typeUser"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/register_til_name">
 
-            <RadioGroup
-                android:id="@+id/register_rg_typeUser"
-                android:layout_width="0dp"
+            <RadioButton
+                android:id="@+id/register_rb_student"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/register_til_name">
+                android:buttonTint="@color/colorPrimaryDark"
+                android:checked="true"
+                android:text="@string/register_radioStudent"
+                android:textColor="@color/colorPrimary_text" />
 
-                <RadioButton
-                    android:id="@+id/register_rb_student"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="@color/colorPrimaryDark"
-                    android:checked="true"
-                    android:text="@string/register_radioStudent"
-                    android:textColor="@color/colorPrimary_text" />
-
-                <RadioButton
-                    android:id="@+id/register_rb_teacher"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="@color/colorPrimaryDark"
-                    android:text="@string/register_radioTeacher"
-                    android:textColor="@color/colorPrimary_text" />
-
-                <RadioButton
-                    android:id="@+id/register_rb_parent"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="@color/colorPrimaryDark"
-                    android:text="@string/register_radioParent"
-                    android:textColor="@color/colorPrimary_text" />
-
-            </RadioGroup>
-
-            <Button
-                android:id="@+id/register_btn_toStepThree"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/round_button_back"
-                android:gravity="center"
-                android:text="->"
-                android:textColor="@android:color/white"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.9"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/register_rg_typeUser"
-                app:layout_constraintVertical_bias="0.2" />
-
-
-        </android.support.constraint.ConstraintLayout>
-
-        <!-- Регистрация - Шаг 3 -->
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/register_layout_stepThree"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone">
-
-            <FrameLayout
-                android:id="@+id/register_layout_stepThreeType"
-                android:layout_width="0dp"
+            <RadioButton
+                android:id="@+id/register_rb_teacher"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.4">
+                android:buttonTint="@color/colorPrimaryDark"
+                android:text="@string/register_radioTeacher"
+                android:textColor="@color/colorPrimary_text" />
 
-                <!-- Ученик -->
-                <android.support.constraint.ConstraintLayout
-                    android:id="@+id/register_layout_stepThreeStudent"
-                    android:layout_width="match_parent"
+            <RadioButton
+                android:id="@+id/register_rb_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorPrimaryDark"
+                android:text="@string/register_radioParent"
+                android:textColor="@color/colorPrimary_text" />
+
+        </RadioGroup>
+
+        <ImageButton
+            android:id="@+id/register_btn_backToStepOne"
+            style="@style/RoundBtn"
+            android:background="@drawable/button_back"
+            android:contentDescription="@string/btn_description_back"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/register_rg_typeUser"
+            app:layout_constraintVertical_bias="0.2" />
+
+        <ImageButton
+            android:id="@+id/register_btn_toStepThree"
+            style="@style/RoundBtn"
+            android:background="@drawable/round_button_back"
+            android:contentDescription="@string/btn_description_forward"
+            android:src="@drawable/ic_arrow_forward"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/register_rg_typeUser"
+            app:layout_constraintVertical_bias="0.2" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <!-- Регистрация - Шаг 3 -->
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/register_layout_stepThree"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <FrameLayout
+            android:id="@+id/register_layout_stepThreeType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.4">
+
+            <!-- Ученик -->
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/register_layout_stepThreeStudent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/register_tv_class"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:visibility="gone">
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Класс"
+                    android:textColor="@color/colorPrimary_text"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:id="@+id/register_tv_class"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
-                        android:text="Класс"
-                        android:textColor="@color/colorPrimary_text"
-                        android:textSize="18sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <Spinner
-                        android:id="@+id/register_spinner_classNumber"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
-                        android:spinnerMode="dialog"
-                        app:layout_constraintEnd_toStartOf="@+id/register_spinner_classChar"
-                        app:layout_constraintHorizontal_chainStyle="packed"
-                        app:layout_constraintStart_toEndOf="@+id/register_tv_class"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <Spinner
-                        android:id="@+id/register_spinner_classChar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="8dp"
-                        android:spinnerMode="dialog"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/register_spinner_classNumber"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/textView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
-                        android:text="Дата рождения"
-                        android:textColor="@color/colorPrimary_text"
-                        android:textSize="18sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/register_tv_class" />
-
-                    <Spinner
-                        android:id="@+id/register_spinner_birthDate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginTop="8dp"
-                        android:spinnerMode="dialog"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/register_spinner_birthMonth"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintHorizontal_chainStyle="packed"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-                    <Spinner
-                        android:id="@+id/register_spinner_birthMonth"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginStart="5dp"
-                        android:spinnerMode="dialog"
-                        app:layout_constraintBottom_toBottomOf="@+id/register_spinner_birthDate"
-                        app:layout_constraintEnd_toStartOf="@+id/register_spinner_birthYear"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/register_spinner_birthDate"
-                        app:layout_constraintTop_toTopOf="@+id/register_spinner_birthDate" />
-
-                    <Spinner
-                        android:id="@+id/register_spinner_birthYear"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:spinnerMode="dialog"
-                        app:layout_constraintBottom_toBottomOf="@+id/register_spinner_birthDate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/register_spinner_birthMonth"
-                        app:layout_constraintTop_toTopOf="@+id/register_spinner_birthDate" />
-
-
-                </android.support.constraint.ConstraintLayout>
-
-                <!-- Учитель -->
-                <android.support.constraint.ConstraintLayout
-                    android:id="@+id/register_layout_stepThreeTeacher"
-                    android:layout_width="match_parent"
+                <Spinner
+                    android:id="@+id/register_spinner_classNumber"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:visibility="gone">
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:spinnerMode="dropdown"
+                    app:layout_constraintEnd_toStartOf="@+id/register_spinner_classLetter"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@+id/register_tv_class"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:id="@+id/register_tv_specialty"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
-                        android:text="Специальность"
-                        android:textColor="@color/colorPrimary_text"
-                        android:textSize="18sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <android.support.v7.widget.RecyclerView
-                        android:id="@+id/register_rv_specialty"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="24dp"
-                        android:layout_marginStart="24dp"
-                        android:layout_marginTop="8dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/register_tv_specialty" />
-
-                    <!--<CheckBox
-                        android:id="@+id/register_cb_classTeacher"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="24dp"
-                        android:buttonTint="@color/colorPrimaryDark"
-                        android:text="Классный руководитель"
-                        android:textColor="@color/colorPrimary_text"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/register_rv_specialty" />
-
-                    <android.support.constraint.ConstraintLayout
-                        android:id="@+id/register_layout_classLearningOne"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
-                        android:visibility="gone"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/register_cb_classTeacher">
-
-                        <TextView
-                            android:id="@+id/register_tv_classLearningOne"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginTop="8dp"
-                            android:text="Первый класс"
-                            android:textColor="@color/colorPrimary_text"
-                            android:textSize="18sp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <Spinner
-                            android:id="@+id/register_spinner_classLearningOneNumber"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="5dp"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginTop="8dp"
-                            android:spinnerMode="dialog"
-                            app:layout_constraintEnd_toStartOf="@+id/register_spinner_classLearningOneChar"
-                            app:layout_constraintHorizontal_chainStyle="packed"
-                            app:layout_constraintStart_toEndOf="@+id/register_tv_classLearningOne"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <Spinner
-                            android:id="@+id/register_spinner_classLearningOneChar"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginTop="8dp"
-                            android:spinnerMode="dialog"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/register_spinner_classLearningOneNumber"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                    </android.support.constraint.ConstraintLayout>
-
-                    <android.support.constraint.ConstraintLayout
-                        android:id="@+id/register_layout_classLearningTwo"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
-                        android:visibility="gone"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/register_layout_classLearningOne">
-
-                        <TextView
-                            android:id="@+id/register_tv_classLearningTwo"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginTop="8dp"
-                            android:text="Второй класс"
-                            android:textColor="@color/colorPrimary_text"
-                            android:textSize="18sp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <Spinner
-                            android:id="@+id/register_spinner_classLearningTwoNumber"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="5dp"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginTop="8dp"
-                            android:spinnerMode="dialog"
-                            app:layout_constraintEnd_toStartOf="@+id/register_spinner_classLearningTwoChar"
-                            app:layout_constraintHorizontal_chainStyle="packed"
-                            app:layout_constraintStart_toEndOf="@+id/register_tv_classLearningTwo"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <Spinner
-                            android:id="@+id/register_spinner_classLearningTwoChar"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginTop="8dp"
-                            android:spinnerMode="dialog"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/register_spinner_classLearningTwoNumber"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                    </android.support.constraint.ConstraintLayout>-->
-
-                </android.support.constraint.ConstraintLayout>
-
-                <!-- Родитель -->
-                <android.support.constraint.ConstraintLayout
-                    android:id="@+id/register_layout_stepThreeParent"
-                    android:layout_width="match_parent"
+                <Spinner
+                    android:id="@+id/register_spinner_classLetter"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:visibility="gone">
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="8dp"
+                    android:spinnerMode="dropdown"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/register_spinner_classNumber"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:id="@+id/register_tv_classChild"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
-                        android:text="Класс ребёнка"
-                        android:textColor="@color/colorPrimary_text"
-                        android:textSize="18sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
 
-                    <Spinner
-                        android:id="@+id/register_spinner_classChildNumber"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
-                        android:spinnerMode="dialog"
-                        app:layout_constraintEnd_toStartOf="@+id/register_spinner_classChildChar"
-                        app:layout_constraintHorizontal_chainStyle="packed"
-                        app:layout_constraintStart_toEndOf="@+id/register_tv_classChild"
-                        app:layout_constraintTop_toTopOf="parent" />
+            <!-- Учитель -->
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/register_layout_stepThreeTeacher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
 
-                    <Spinner
-                        android:id="@+id/register_spinner_classChildChar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="8dp"
-                        android:spinnerMode="dialog"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/register_spinner_classChildNumber"
-                        app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/register_tv_specialty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Специальность"
+                    android:textColor="@color/colorPrimary_text"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <android.support.v7.widget.RecyclerView
-                        android:id="@+id/register_rv_child"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginEnd="24dp"
-                        android:layout_marginStart="24dp"
-                        android:layout_marginTop="8dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/register_tv_classChild" />
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/register_rv_specialty"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/recyclerview_back"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/register_tv_specialty" />
 
-                </android.support.constraint.ConstraintLayout>
+            </android.support.constraint.ConstraintLayout>
 
-            </FrameLayout>
+            <!-- Родитель -->
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/register_layout_stepThreeParent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
 
-            <Button
-                android:id="@+id/register_btn_register"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/round_button_back"
-                android:gravity="center"
-                android:text="✔"
-                android:textColor="@android:color/white"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.9"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/register_layout_stepThreeType"
-                app:layout_constraintVertical_bias="0.2" />
+                <TextView
+                    android:id="@+id/register_tv_classChild"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Класс ребёнка"
+                    android:textColor="@color/colorPrimary_text"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        </android.support.constraint.ConstraintLayout>
+                <Spinner
+                    android:id="@+id/register_spinner_classChildNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:spinnerMode="dropdown"
+                    app:layout_constraintEnd_toStartOf="@+id/register_spinner_classChildLetter"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@+id/register_tv_classChild"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-    </FrameLayout>
+                <Spinner
+                    android:id="@+id/register_spinner_classChildLetter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="8dp"
+                    android:spinnerMode="dropdown"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/register_spinner_classChildNumber"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-</ScrollView>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/register_rv_child"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/register_tv_classChild" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </FrameLayout>
+
+
+        <ImageButton
+            android:id="@+id/register_btn_backToStepTwo"
+            style="@style/RoundBtn"
+            android:background="@drawable/button_back"
+            android:contentDescription="@string/btn_description_back"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/register_layout_stepThreeType"
+            app:layout_constraintVertical_bias="0.2" />
+
+        <ImageButton
+            android:id="@+id/register_btn_register"
+            style="@style/RoundBtn"
+            android:background="@drawable/round_button_back"
+            android:contentDescription="@string/btn_description_tick"
+            android:src="@drawable/ic_tick"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/register_layout_stepThreeType"
+            app:layout_constraintVertical_bias="0.2" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>

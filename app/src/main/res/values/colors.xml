@@ -10,4 +10,6 @@
     <color name="colorDivider">#BDBDBD</color>
 
     <color name="colorSilver">#C0C0C0</color>
+
+    <color name="colorSilverLight">#dcdcdc</color>
 </resources>

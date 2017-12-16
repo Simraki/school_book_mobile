@@ -13,7 +13,7 @@ class StartPresenter : IStart.Presenter {
     }
 
     override fun isLoggedIn() {
-        val pref = model.pref()
+        /*val pref = model.pref()
 
         pref?.let {
             if (pref.getIsLoggedIn()) {
@@ -21,7 +21,8 @@ class StartPresenter : IStart.Presenter {
             } else {
                 view?.toLogin()
             }
-        }
+        }*/
+        view?.toLogin()
     }
 
     override fun unbind() {

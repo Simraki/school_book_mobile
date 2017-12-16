@@ -5,6 +5,6 @@ import yeapcool.school_book.model.network.pojo.SchoolClass
 import yeapcool.school_book.model.network.pojo.User
 
 
-data class ServerRequest(var operation: String,
-                         var user: User,
-                         @SerializedName("class") var schoolClass: SchoolClass)
+data class ServerRequest(var operation: String? = null,
+                         var user: User? = null,
+                         @SerializedName("class") var schoolClass: SchoolClass? = null)

@@ -1,6 +1,7 @@
 package yeapcool.school_book.model
 
 import io.reactivex.Observable
+import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import yeapcool.school_book.model.network.ServerRequest
 import yeapcool.school_book.model.network.ServerResponse
@@ -21,6 +22,7 @@ class Model {
             api?.post(serverRequest)
                     ?.subscribeOn(Schedulers.newThread())
                     ?.filter { it -> it != null }
+                    ?.observeOn(AndroidSchedulers.mainThread())
 
     fun user(): UserModel = user
 }
