@@ -1,10 +1,12 @@
 package yeapcool.school_book.login
 
+import android.util.Log
 import io.reactivex.disposables.CompositeDisposable
 import yeapcool.school_book.Constants
+import yeapcool.school_book.HelpMethods
 import yeapcool.school_book.model.Model
+import yeapcool.school_book.model.data.User
 import yeapcool.school_book.model.network.ServerRequest
-import yeapcool.school_book.model.network.pojo.User
 
 
 class LoginPresenter : ILogin.Presenter {
@@ -35,9 +37,6 @@ class LoginPresenter : ILogin.Presenter {
 
         if (!email.isEmpty() && !password.isEmpty())
             login(email, password)
-        else {
-            // Показать 'ошибку на сервере' на телефоне
-        }
 
     }
 
@@ -46,23 +45,51 @@ class LoginPresenter : ILogin.Presenter {
         val request = ServerRequest(operation = Constants.OPERATION_LOGIN, user = user)
         val th = model.network(request)
 
+
         if (th != null) {
+
             val disp_login = th
                     .subscribe({ it ->
                         if (it.result == Constants.SUCCESS)
-                            view?.showSnackbar("Good")
-                        else
-                            view?.showSnackbar("Bad")
+                            if (it.user != null) {
+
+                                it.user?.let { loginSubscriberSuccess(it) }
+
+                                view?.toMain()
+                            } else {
+                                view?.showSnackbar(Constants.SERVER_ERROR)
+                            }
+                        else {
+                            view?.showSnackbar(HelpMethods.responseError(it))
+                        }
                     }, {
-                        view?.showSnackbar("Error")
+                        view?.showSnackbar(Constants.SERVER_ERROR)
                     })
 
             disposables.add(disp_login)
         }
     }
 
-    override fun toRegister() {
-        view?.toRegister()
+    private fun loginSubscriberSuccess(user: User) {
+        model.pref()?.setName(user.name)
+        model.pref()?.setSurname(user.surname)
+        model.pref()?.setUn_id(user.un_id)
+
+        user.type?.let {
+            model.pref()?.setTypeUser(it)
+            if (it == 1 ) {
+                val schoolClass = user.classStudent
+
+                Log.i(Constants.TAG, schoolClass.toString())
+
+                schoolClass?.id_class?.let { model.pref()?.setId_class(it) }
+                schoolClass?.number?.let { model.pref()?.setClassNumber(it) }
+                schoolClass?.letter?.let { model.pref()?.setClassLetter(it) }
+            }
+        }
+
+        user.id_user?.let { model.pref()?.setId_user(it) }
+        model.pref()?.setIsLoggedIn(true)
     }
 
     override fun clearTh() {

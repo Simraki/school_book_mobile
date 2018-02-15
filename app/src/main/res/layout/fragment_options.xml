@@ -8,7 +8,6 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="8dp"
         android:paddingTop="8dp">
 
         <android.support.v7.widget.CardView
@@ -41,10 +40,9 @@
                     style="@style/CommonText.Header"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Влад Якубицкий"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.2"
+                    app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toEndOf="@+id/options_iv_imageUser"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -77,10 +75,11 @@
                     <ImageView
                         android:id="@+id/options_iv_library"
                         android:layout_width="40dp"
+                        android:padding="4dp"
                         android:layout_height="40dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
-                        android:src="@drawable/ic_smile"
+                        android:src="@drawable/ic_library"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -110,8 +109,9 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_marginStart="8dp"
+                        android:padding="4dp"
                         android:layout_marginTop="8dp"
-                        android:src="@drawable/ic_smile"
+                        android:src="@drawable/ic_statistics"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -141,8 +141,9 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_marginStart="8dp"
+                        android:padding="4dp"
                         android:layout_marginTop="8dp"
-                        android:src="@drawable/ic_smile"
+                        android:src="@drawable/ic_classmates"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -173,7 +174,8 @@
                         android:layout_height="40dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
-                        android:src="@drawable/ic_smile"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_teachers"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -204,7 +206,8 @@
                         android:layout_height="40dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
-                        android:src="@drawable/ic_smile"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_visit"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -265,9 +268,10 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_marginBottom="8dp"
+                        android:padding="4dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
-                        android:src="@drawable/ic_smile"
+                        android:src="@drawable/ic_calendar"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -315,8 +319,9 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_marginStart="8dp"
+                        android:padding="4dp"
                         android:layout_marginTop="8dp"
-                        android:src="@drawable/ic_smile"
+                        android:src="@drawable/ic_settings"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -349,9 +354,10 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_marginBottom="8dp"
+                        android:padding="4dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
-                        android:src="@drawable/ic_smile"
+                        android:src="@drawable/ic_exit"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />

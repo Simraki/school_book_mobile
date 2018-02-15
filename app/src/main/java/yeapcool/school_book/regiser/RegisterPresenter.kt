@@ -1,11 +1,13 @@
 package yeapcool.school_book.regiser
 
+import android.util.Log
 import io.reactivex.disposables.CompositeDisposable
 import yeapcool.school_book.Constants
+import yeapcool.school_book.HelpMethods
 import yeapcool.school_book.model.Model
 import yeapcool.school_book.model.network.ServerRequest
-import yeapcool.school_book.model.network.pojo.SchoolClass
-import yeapcool.school_book.model.network.pojo.User
+import yeapcool.school_book.model.data.SchoolClass
+import yeapcool.school_book.model.data.User
 
 
 class RegisterPresenter : IRegister.Presenter {
@@ -88,8 +90,8 @@ class RegisterPresenter : IRegister.Presenter {
     }
 
     override fun clickBtnRegisterTeacher(speciality: ArrayList<String>?) {
-        if (speciality == null || speciality?.isEmpty()) {
-            view?.showSnackbar("Выберите специальность")
+        if (speciality == null || speciality.isEmpty()) {
+            view?.showSnackbar(Constants.ERROR_NOT_CHOSEN_SPECIALITY)
         } else {
             user.speciality = speciality
 
@@ -104,23 +106,18 @@ class RegisterPresenter : IRegister.Presenter {
         if (th != null) {
             val disp_register = th
                     .subscribe({ it ->
-                        if (it.result == Constants.SUCCESS)
-                            view?.showSnackbar("good")
-                        else
-                            if (!it.message.isEmpty())
-                                view?.showSnackbar(it.message)
-                            else
-                                view?.showSnackbar(Constants.ERROR_DEFAULT)
+                        if (it.result == Constants.SUCCESS) {
+                            view?.showSnackbar(Constants.REGISTER_GOOD)
+                            view?.toStepOne()
+                        } else
+                            view?.showSnackbar(HelpMethods.responseError(it))
                     }, {
-                        view?.showSnackbar("Error")
+                        view?.showSnackbar(Constants.ERROR)
                     })
             disposables.add(disp_register)
         } else {
-            // Ошибка на сервере
+            view?.showSnackbar(Constants.SERVER_ERROR)
         }
     }
 
-    override fun toLogin() {
-        view?.toLogin()
-    }
 }

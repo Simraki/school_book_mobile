@@ -12,7 +12,7 @@ class SpecialityAdapter(private val context: Context, private val items: ArrayLi
 
     private val list = ArrayList<String>()
 
-    private var checked = Array(items.size, {false})
+    private val checked = Array(items.size, { false })
 
     override fun onBindViewHolder(holder: SpecialityViewHolder?, position: Int) {
         holder?.bind(items[position], checked[position])
@@ -38,5 +38,5 @@ class SpecialityAdapter(private val context: Context, private val items: ArrayLi
         notifyDataSetChanged()
     }
 
-    fun getList() = list
+    override fun getList() = list
 }

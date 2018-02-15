@@ -1,5 +1,6 @@
 package yeapcool.school_book.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
@@ -7,9 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_login.*
-import yeapcool.school_book.OnSwipeTouchListener
 import yeapcool.school_book.R
-import yeapcool.school_book.regiser.RegisterFragment
+import yeapcool.school_book.main.MainActivity
 
 
 class LoginFragment : Fragment(), ILogin.View {
@@ -44,8 +44,6 @@ class LoginFragment : Fragment(), ILogin.View {
     }
 
     private fun init() {
-        login_layout_main.setOnTouchListener(OnSwipeTouchListener(context, onSwipeLeft = { presenter.toRegister() }))
-
         presenter = LoginPresenter()
         login_btn_login.setOnClickListener { listenerBtnLogin() }
     }
@@ -68,6 +66,12 @@ class LoginFragment : Fragment(), ILogin.View {
         }
     }
 
+    override fun toMain() {
+        val intent = Intent(context, MainActivity::class.java)
+        startActivity(intent)
+        activity.finish()
+    }
+
     override fun errorEmail(error: String) {
         login_til_email.error = error
     }
@@ -75,14 +79,4 @@ class LoginFragment : Fragment(), ILogin.View {
     override fun errorPassword(error: String) {
         login_til_pass.error = error
     }
-
-    override fun toRegister() {
-        activity.supportFragmentManager
-                .beginTransaction()
-                .setCustomAnimations(R.animator.fragment_slide_left_start, R.animator.fragment_slide_left_end)
-                //.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                .replace(R.id.start_layout_content, RegisterFragment(), RegisterFragment::class.java.toString())
-                .commit()
-    }
-
 }

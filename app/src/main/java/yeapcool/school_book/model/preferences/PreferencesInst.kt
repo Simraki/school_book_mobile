@@ -1,6 +1,8 @@
 package yeapcool.school_book.model.preferences
 
 import android.content.Context
+import android.util.Log
+import yeapcool.school_book.Constants
 
 
 object PreferencesInst {

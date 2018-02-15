@@ -14,7 +14,7 @@
     <string name="password">Пароль</string>
     <string name="phone_number">Номер телефона</string>
 
-    <string name="toRegister">Ещё нет аккаунта? <b>Регестрируйся!</b> </string>
+    <string name="toRegister"> Зарегистрируйся! Свайп влево! -></string>
 
     <string name="register_radioStudent">Я - ученик</string>
     <string name="register_radioTeacher">Я - учитель</string>
@@ -98,4 +98,29 @@
         <item>Ж</item>
         <item>Е</item>
     </string-array>
+
+
+    <string-array name="subject">
+        <item>Все</item>
+        <item>Математика</item>
+        <item>Русский язык</item>
+        <item>Английский язык</item>
+        <item>Физика</item>
+        <item>География</item>
+        <item>Биология</item>
+        <item>История</item>
+        <item>Информатика</item>
+        <item>Химия</item>
+        <item>Литература</item>
+        <item>Физкультура</item>
+        <item>ОБЖ</item>
+        <item>ИЗО</item>
+        <item>Технология</item>
+        <item>Музыка</item>
+        <item>Окружающий мир</item>
+        <item>Обществознание</item>
+        <item>Основы духовной культуры</item>
+        <item>Литературное чтение</item>
+    </string-array>
+
 </resources>

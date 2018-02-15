@@ -1,7 +1,7 @@
 package yeapcool.school_book.regiser
 
 import yeapcool.school_book.common.CommonPresenter
-import yeapcool.school_book.model.network.pojo.SchoolClass
+import yeapcool.school_book.model.data.SchoolClass
 
 
 interface IRegister {
@@ -24,8 +24,6 @@ interface IRegister {
 
         fun errorSurname(error: String)
 
-        fun toLogin()
-
     }
 
     interface Presenter: CommonPresenter {
@@ -43,8 +41,6 @@ interface IRegister {
         fun clickBtnRegisterStudent(schoolClass: SchoolClass)
 
         fun clickBtnRegisterTeacher(speciality: ArrayList<String>?)
-
-        fun toLogin()
 
         fun clearTh()
     }

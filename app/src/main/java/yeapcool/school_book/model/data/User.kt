@@ -1,4 +1,4 @@
-package yeapcool.school_book.model.network.pojo
+package yeapcool.school_book.model.data
 
 
 data class User(var id_user: Int? = null,
@@ -10,5 +10,6 @@ data class User(var id_user: Int? = null,
                 var type: Int? = null,
                 var birthDate: String? = null,
                 var rcu: String? = null,
+                var marksVisit: ArrayList<String>? = null,
                 var speciality: ArrayList<String>? = null,
                 var classStudent: SchoolClass? = null)

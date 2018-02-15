@@ -10,6 +10,10 @@
     <color name="colorDivider">#BDBDBD</color>
 
     <color name="colorSilver">#C0C0C0</color>
-
     <color name="colorSilverLight">#dcdcdc</color>
+    <color name="colorSilverOverLight">#fbf9fb</color>
+
+    <color name="colorBottomNavBarInActive">#abadb2</color>
+
+    <color name="colorMark">#cc0000</color>
 </resources>

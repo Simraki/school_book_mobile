@@ -3,41 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="10dp">
+    android:layout_marginBottom="5dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="5dp">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp">
 
-        <!--<ImageView
-            android:id="@+id/rowMarksStudent_iv_image"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ic_smile"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/rowMarksStudent_tv_subject"
-            style="@style/CommonText.Header"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="16dp"
-            android:text="Таисия Викторовна"
-            app:layout_constraintBottom_toBottomOf="@id/rowMarksStudent_iv_image"
-            app:layout_constraintEnd_toStartOf="@+id/rowMarksStudent_tv_mark"
-            app:layout_constraintStart_toEndOf="@id/rowMarksStudent_iv_image"
-            app:layout_constraintTop_toTopOf="@id/rowMarksStudent_iv_image" />-->
-
         <TextView
             android:id="@+id/rowMarksStudent_tv_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="02.05"
             android:textColor="@color/colorSecondary_text"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -51,7 +31,6 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:text="Английский язык"
             app:layout_constraintBottom_toBottomOf="@id/rowMarksStudent_tv_date"
             app:layout_constraintEnd_toStartOf="@+id/rowMarksStudent_tv_mark"
             app:layout_constraintStart_toEndOf="@id/rowMarksStudent_tv_date"
@@ -62,8 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:text="4"
-            android:textColor="@android:color/holo_red_dark"
+            android:textColor="@color/colorMark"
             android:textSize="28sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"

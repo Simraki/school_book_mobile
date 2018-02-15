@@ -1,9 +1,14 @@
 package yeapcool.school_book.start
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
+import kotlinx.android.synthetic.main.activity_start.*
+import yeapcool.school_book.Constants
 import yeapcool.school_book.R
-import yeapcool.school_book.login.LoginFragment
+import yeapcool.school_book.adapters.LoginRegisterFragmentsPagerAdapter
+import yeapcool.school_book.main.MainActivity
 
 class StartActivity : AppCompatActivity(), IStart.View {
 
@@ -34,15 +39,16 @@ class StartActivity : AppCompatActivity(), IStart.View {
     }
 
     override fun toMain() {
-        /*val intent = Intent(this, MainActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-        startActivity(intent)*/
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 
     override fun toLogin() {
-        supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.start_layout_content, LoginFragment(), LoginFragment::class.java.toString())
-                .commit()
+        val adapter = LoginRegisterFragmentsPagerAdapter(supportFragmentManager)
+        start_vp_content.adapter = adapter
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
     }
 }

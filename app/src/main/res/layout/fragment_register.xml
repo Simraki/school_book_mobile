@@ -104,7 +104,7 @@
         <ImageButton
             android:id="@+id/register_btn_toStepTwo"
             style="@style/RoundBtn"
-            android:background="@drawable/round_button_back"
+            android:background="@drawable/round_button_bckgr_forward"
             android:contentDescription="@string/btn_description_forward"
             android:src="@drawable/ic_arrow_forward"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -207,7 +207,7 @@
         <ImageButton
             android:id="@+id/register_btn_backToStepOne"
             style="@style/RoundBtn"
-            android:background="@drawable/button_back"
+            android:background="@drawable/round_button_bckgr_back"
             android:contentDescription="@string/btn_description_back"
             android:src="@drawable/ic_arrow_back"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -220,7 +220,7 @@
         <ImageButton
             android:id="@+id/register_btn_toStepThree"
             style="@style/RoundBtn"
-            android:background="@drawable/round_button_back"
+            android:background="@drawable/round_button_bckgr_forward"
             android:contentDescription="@string/btn_description_forward"
             android:src="@drawable/ic_arrow_forward"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -321,7 +321,7 @@
                     android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:background="@drawable/recyclerview_back"
+                    android:background="@drawable/recyclerview_bckgr"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/register_tv_specialty" />
@@ -392,7 +392,7 @@
         <ImageButton
             android:id="@+id/register_btn_backToStepTwo"
             style="@style/RoundBtn"
-            android:background="@drawable/button_back"
+            android:background="@drawable/round_button_bckgr_back"
             android:contentDescription="@string/btn_description_back"
             android:src="@drawable/ic_arrow_back"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -405,7 +405,7 @@
         <ImageButton
             android:id="@+id/register_btn_register"
             style="@style/RoundBtn"
-            android:background="@drawable/round_button_back"
+            android:background="@drawable/round_button_bckgr_forward"
             android:contentDescription="@string/btn_description_tick"
             android:src="@drawable/ic_tick"
             app:layout_constraintBottom_toBottomOf="parent"

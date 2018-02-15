@@ -11,11 +11,9 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.RadioGroup
 import kotlinx.android.synthetic.main.fragment_register.*
-import yeapcool.school_book.OnSwipeTouchListener
 import yeapcool.school_book.R
 import yeapcool.school_book.adapters.specialityAdapter.SpecialityAdapter
-import yeapcool.school_book.login.LoginFragment
-import yeapcool.school_book.model.network.pojo.SchoolClass
+import yeapcool.school_book.model.data.SchoolClass
 
 
 class RegisterFragment : Fragment(), IRegister.View, View.OnClickListener, RadioGroup.OnCheckedChangeListener {
@@ -23,7 +21,7 @@ class RegisterFragment : Fragment(), IRegister.View, View.OnClickListener, Radio
     private lateinit var presenter: RegisterPresenter
 
     private var typeUser = 1
-    private var classNumber: String? = null
+    private var classNumber: Int? = null
     private var classLetter: String? = null
     private var birthDay: String? = null
     private var birthMonth: String? = null
@@ -62,9 +60,6 @@ class RegisterFragment : Fragment(), IRegister.View, View.OnClickListener, Radio
     }
 
     private fun init() {
-
-        register_layout_main.setOnTouchListener(OnSwipeTouchListener(context, onSwipeRight = { presenter.toLogin() }))
-
 
         presenter = RegisterPresenter()
 
@@ -122,7 +117,7 @@ class RegisterFragment : Fragment(), IRegister.View, View.OnClickListener, Radio
                 override fun onItemSelected(parent: AdapterView<*>,
                                             itemSelected: View, selectedItemPosition: Int, selectedId: Long) {
 
-                    classNumber = arrayClassNumber[selectedItemPosition].toString()
+                    classNumber = arrayClassNumber[selectedItemPosition]
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>) {}
@@ -241,7 +236,6 @@ class RegisterFragment : Fragment(), IRegister.View, View.OnClickListener, Radio
         }
     }
 
-
     override fun errorEmail(error: String) {
         register_til_email.error = error
     }
@@ -258,12 +252,4 @@ class RegisterFragment : Fragment(), IRegister.View, View.OnClickListener, Radio
         register_til_surname.error = error
     }
 
-    override fun toLogin() {
-        activity.supportFragmentManager
-                .beginTransaction()
-                .setCustomAnimations(R.animator.fragment_slide_right_start, R.animator.fragment_slide_right_end)
-                //.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                .replace(R.id.start_layout_content, LoginFragment(), LoginFragment::class.java.toString())
-                .commit()
-    }
 }

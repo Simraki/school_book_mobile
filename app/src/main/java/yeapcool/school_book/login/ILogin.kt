@@ -7,8 +7,6 @@ interface ILogin {
 
     interface View {
 
-        fun toRegister()
-
         fun errorEmail(error: String)
 
         fun errorPassword(error: String)
@@ -16,6 +14,8 @@ interface ILogin {
         fun showLoad()
 
         fun showSnackbar(message: String)
+
+        fun toMain()
 
     }
 
@@ -25,11 +25,7 @@ interface ILogin {
 
         fun clickBtnLogin(email: String, password: String)
 
-        fun toRegister()
-
         fun clearTh()
-
-
 
     }
 }

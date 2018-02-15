@@ -1,53 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/marksStudent_layout_data"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <Button
         android:id="@+id/marksStudent_btn_finalMarks"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_marginStart="8dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:background="@drawable/button"
+        android:background="@color/colorPrimary"
         android:text="Итоговые"
         android:textColor="@android:color/white"
         android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="@+id/marksStudent_rv_marks"
+        app:layout_constraintStart_toStartOf="@+id/marksStudent_swipeLayout_marks"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/marksStudent_rv_marks"
+    <Spinner
+        android:id="@+id/marksStudent_sp_subject"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:spinnerMode="dialog"
+        app:layout_constraintBottom_toTopOf="@+id/marksStudent_swipeLayout_marks"
+        app:layout_constraintEnd_toEndOf="@+id/marksStudent_swipeLayout_marks"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toEndOf="@+id/marksStudent_btn_finalMarks"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/marksStudent_tv_NMarks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_margin="8dp"
+        android:text="Нет оценок"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/marksStudent_swipeLayout_marks"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/marksStudent_btn_finalMarks" />
+        app:layout_constraintTop_toBottomOf="@+id/marksStudent_btn_finalMarks">
 
-    <TextView
-        android:id="@+id/marksStudent_tv_subject"
-        style="@style/CommonText.Header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Предмет"
-        app:layout_constraintBaseline_toBaselineOf="@id/marksStudent_btn_finalMarks"
-        app:layout_constraintEnd_toStartOf="@+id/marksStudent_sp_subject"
-        app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintStart_toEndOf="@+id/marksStudent_btn_finalMarks" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/marksStudent_rv_marks"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-    <Spinner
-        android:id="@+id/marksStudent_sp_subject"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:spinnerMode="dialog"
-        app:layout_constraintBottom_toBottomOf="@id/marksStudent_tv_subject"
-        app:layout_constraintEnd_toEndOf="@+id/marksStudent_rv_marks"
-        app:layout_constraintTop_toTopOf="@id/marksStudent_tv_subject" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+
 
 </android.support.constraint.ConstraintLayout>

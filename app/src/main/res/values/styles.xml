@@ -18,7 +18,7 @@
     </style>
 
     <style name="Button">
-        <item name="android:background">@drawable/button</item>
+        <item name="android:background">@drawable/simple_button_backg</item>
         <item name="android:textSize">14sp</item>
         <item name="android:gravity">center</item>
         <item name="android:textColor">@android:color/white</item>
@@ -33,15 +33,13 @@
         <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="CommonText.TimeHeader">
-        <item name="android:layout_marginBottom">4dp</item>
-        <item name="android:layout_marginTop">4dp</item>
-        <item name="android:textSize">22sp</item>
+    <style name="TimeHeader">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/colorPrimary_text</item>
     </style>
 
     <style name="LessonHeader">
         <item name="android:gravity">center</item>
-        <item name="android:padding">2dp</item>
         <item name="android:textColor">@color/colorSecondary_text</item>
         <item name="android:textSize">20sp</item>
     </style>

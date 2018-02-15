@@ -1,6 +1,6 @@
 package yeapcool.school_book.model
 
-import yeapcool.school_book.model.network.pojo.User
+import yeapcool.school_book.model.data.User
 
 
 object UserModel {
